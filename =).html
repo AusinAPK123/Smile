@@ -42,33 +42,5 @@
 <p style="color: white; text-align: center; font-family: 'MinecraftRegular', Sans-Serif;">
   Ờ thì nó sẽ không bao giờ đếm đến 0 =)
 </p>
-<script
-function updateCountdown() {
-    const countdownElement = document.getElementById('countdown');
-    const now = new Date();
-    const targetDate = new Date(now.getFullYear(), 2, 11, 20); // 20 giờ ngày 11/3
-    const endDate = new Date(now.getFullYear(), 2, 12, 20); // 20 giờ ngày 12/3
-
-    let timeLeft = endDate - now;
-    if (now > endDate) {
-        countdownElement.innerText = '00:00:00';
-        clearInterval(timer);
-        return;
-    }
-
-    if (now < targetDate) {
-        timeLeft = endDate - targetDate;
-    }
-
-    const hours = Math.floor(timeLeft / (1000 * 60 * 60)).toString().padStart(2, '0');
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000).toString().padStart(2, '0');
-
-    countdownElement.innerText = `${hours}:${minutes}:${seconds}`;
-}
-
-updateCountdown();
-const timer = setInterval(updateCountdown, 1000);
-</script>
 </body>
 </html>
